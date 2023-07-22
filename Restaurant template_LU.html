@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Template</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background:rgb(249, 249, 125);
+        color: #cb40de;
+        padding: 10px;
+        z-index: 1;
+        
+      }
+      h1,
+      h3 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+        font-size: 4em;
+      }
+      /* *************************************************************************** */
+
+      nav {
+        background-color: #333;
+        border-radius: 5px;
+        height: 40px;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        /* align-content: center; */
+        align-items: center;
+        margin: auto;
+      }
+
+      nav a {
+        /* flex: 1; */
+        margin: 20px;
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #7fff6b;
+        font-size: 20px;
+        text-shadow: 0 0 3em white;
+      }
+      /* .................................................................................................. */
+      .container {
+        display: flex;
+        
+        align-items: end;
+        height: 600px;
+        width: 100%;
+        background-color: #b2e1ab;
+      }
+      .slider{
+        background-color: orangered;
+        display: flex;        
+        position: absolute;
+        animation: slide 5s infinite;
+        animation-direction: alternate;
+      }
+      #quote{
+        
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        align-content: center;
+        position: relative;
+        margin: auto;
+        /* font-size: 20px; */
+        animation: quote 5s infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes slide {
+        0% {
+          height: 383px;
+          width:600px;        
+          background-color: rgb(245, 128, 20);
+        }
+        100% {
+          height: 383px;
+          width: 100%;
+          background-color: rgb(255, 132, 0);
+        }
+      }
+      @keyframes quote {
+        to{
+          font-size: 55px;
+          
+        }
+      }
+
+      .section {
+        padding: 50px 0;
+        text-align: center;
+        background: #f9f9f9;
+      }
+
+      .section h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      #grid {
+        height: 350px;
+        background-color: rgb(15, 16, 1);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2px;
+        transition: 500ms;
+      }
+
+      :where(.left, .center, .right) {
+        background-color: rgb(123, 238, 151);
+        transition: 2s;
+      }
+      :where(.left, .center, .right):hover {
+        background-color: rgb(233, 233, 247);
+      }
+
+      #grid:has(.left:hover) {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+      #grid:has(.center:hover) {
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      #grid:has(.right:hover) {
+        grid-template-columns: 1fr 1fr 2fr;
+      }
+      dt{
+        font-size: larger;
+      color: rgb(68, 9, 9);
+      }
+      .box{
+        height: 500px;
+        width: 100%;
+        background-color:transparent;
+      }
+
+      /* ************************************************************************************** */
+      footer {
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        
+
+      }
+
+      footer p {
+        margin-bottom: 10px;
+      }
+
+      footer ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+
+      footer ul li {
+        margin-right: 10px;
+      }
+
+      footer ul li a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      footer ul li a:hover {
+        color: #7fff6b;
+        font-size: 20px;
+        text-shadow: 0 0 3em white;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 10px 20px;
+        }
+
+        nav {
+          margin-right: 10px;
+        }
+
+        .container {
+          height: 200px;
+        }
+
+        .section {
+          padding: 30px 0;
+        }
+        
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <h1>
+      😋 Oh! Calcutta 😋
+      <h3>Restaurant</h3>
+    </h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">Login | Sign Up</a>
+    </nav>
+  </header>
+  <!-- ******************************************************************************************************** -->
+  <div class="container">
+    <div class="slider">
+      <p id="quote">
+        "Indulge in Delicious Delights: Where Foodies Find their Paradise"</p>
+    </div>
+  </div>
+
+<!-- **************************************************************************************************************? -->
+  <section class="section">
+    <div class="box">
+    <div id="grid">
+      <div class="left"><h2>Services</h2>
+        <dl>
+          <dt>
+           1. Dine-in
+              <dd>
+                Customers can enjoy their meals in the restaurant.
+              </dd>
+          </dt>
+          <dt> 2.Takeaway
+              <dd>
+                Customers can order food to be packed and taken away.
+              </dd>
+          </dt>
+          <dt>
+            3. Delivery
+              <dd>
+                Food is delivered to customers' homes or offices
+              </dd>
+          </dt>
+          <dt>
+            4. Catering
+            <dd>
+              The restaurant provides food and service for special events and gatherings.
+
+            </dd>
+          </dt>
+          <dt>
+            5. Buffet
+            <dd>
+               Customers can choose from a variety of dishes displayed in a self-service format.
+
+            </dd>
+          </dt>
+      </dl>
+      </div>
+
+      <div class="center"><h2> Products</h2>
+        <dl>
+          <dt>
+            Spices
+            <dd>
+              A wide range of Indian spices are available for purchase, including turmeric, cumin, coriander, cardamom, and more.
+            </dd>
+          </dt>
+          <dt>
+            Condiments
+            <dd>
+              Popular condiments like chutneys, pickles, and relishes are often sold separately.
+            </dd>
+          </dt>
+          <dt>
+            Ready-to-eat Meals
+            <dd>
+              Pre-packaged Indian meals that can be heated and consumed at home.
+            </dd>
+          </dt>
+          <dt>
+            Snacks
+            <dd>
+              Items like samosas, pakoras, and papadums are often sold as snacks.
+
+            </dd>
+          </dt>
+          <dt>
+            Sweets
+            <dd> Traditional Indian sweets like gulab jamun, jalebi, and barfi are popular products.
+            </dd>
+          </dt>
+        </dl>
+      </div>
+
+      <div class="right"><h2> Dishes</h2>
+      <dl>
+        <li>
+          Biryani
+          <dd>
+            A flavorful rice dish cooked with aromatic spices, meat (chicken, mutton, or seafood), and sometimes vegetables.
+          </dd>
+        </li>
+        <li>
+          Butter Chicken
+          <dd>
+            A creamy and mildly spiced chicken dish cooked in a tomato and butter-based sauce.
+          </dd>
+        </li>
+        <li>
+          Tandoori Chicken
+          <dd>Chicken marinated in yogurt and spices, cooked in a traditional clay oven called a tandoor.</dd>
+        </li>
+        <li>
+          Palak Paneer
+          <dd>
+            A vegetarian dish made with spinach and cottage cheese (paneer) cooked in a spiced gravy.        
+          </dd>
+        </li>
+        <li>Masala Dosa</li>
+        <li>Rogan Josh</li>
+        <li>Chole Bhature</li>
+        <li>Pani Puri</li>
+        <li>Vada Pav</li>
+        <li>Gulab Jamun</li>
+      </dl>
+        
+      </div>
+    </div>
+  </div>
+  </section>
+<!-- ************************************************************************************************************** -->
+  <footer>
+    <p>&copy; 2023 😋 Oh! Calcutta 😋 . All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
